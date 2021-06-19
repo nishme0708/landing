@@ -1,1 +1,8 @@
-<p>forecast works!</p>
+<ul class="list-group">
+<ng-container *ngIf="forecast$">
+    <li *ngFor="let forcast of forecast$ | async" class="weather-item list-group-item">
+        <p class="temp">{{forcast.temp | number:'2.2-2'}} °C</p>
+        <p class="day">{{forcast.date | date:'E'}}</p>
+    </li>
+</ng-container>
+</ul>
